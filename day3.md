@@ -50,7 +50,9 @@ Key Features of TL-Verilog:
         
 - Ensures faster verification and debugging with built-in simulation tools
 
-### LABS:
+## LABS:
+### combinational circuits implementation
+
 #### 1. Implemenation of 2:1 mux:
  
 **code**
@@ -68,6 +70,121 @@ Key Features of TL-Verilog:
    endmodule
 ```
 **markchip ide link** [mux2:1]( https://www.makerchip.com/sandbox/0W6fjhnMo/0Nxh0Mm)
+
+**image**
+
+#### 2. Multiplexer with vectors
+
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   m5_makerchip_module   
+\TLV
+   $out = $sel ? $in1[7:0] : $in2[7:0];
+   
+   /.
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link:** [mux_with_vectors](https://www.makerchip.com/sandbox/0W6fjhnMo/0r0h8DL)
+**image**
+
+#### Multiplexer 4:1
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   
+   $out = $sel[0] ? $a : $sel[1] ? $b : $sel[2] ? $c : $d;
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip link:** [mux4:1](https://www.makerchip.com/sandbox/0W6fjhnMo/0wjhGR8)
+**output**
+**image**
+
+#### vectors
+**code**
+```tlv
+m5_TLV_version 1d: tl-x.org
+\m5
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   $out[4:0] = $in1[3:0] +$in2[3:0];
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip link** [vectors](https://www.makerchip.com/sandbox/0W6fjhnMo/0Wnh5y3)
+**output**
+**image**
+
+####  pythogoras theorm
+
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   `include "sqrt32.v"
+   m5_makerchip_module   
+\TLV  
+   $aa_sq[7:0] = $aa ** 2;
+   $bb_sq[7:0] = $bb ** 2;
+   $cc_sq[8:0] = $aa_sq + $bb_sq;
+   $cc[4:0] = sqrt($cc_sq);
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip** [pythogoras therom](https://www.makerchip.com/sandbox/0W6fjhnMo/0Y6hL6x)
+**output**
+**image**
+
+#### Combinational calaculator
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+  
+   m5_makerchip_module 
+\TLV
+   $reset = *reset;
+   
+   $sel[1:0] = *cyc_cnt[1:0];
+   $val1[31:0] = $rand1[3:0];
+   $val2[31:0] = $rand2[3:0];
+   $sum[31:0] = $val1[31:0] + $val2[31:0];
+   $diff[31:0] = $val1[31:0] - $val2[31:0];
+   $prod[31:0] = $val1[31:0] * $val2[31:0];
+   $quot[31:0] = $val1[31:0] / $val2[31:0];
+   $out[31:0] = ($sel == 2'b00) ? $sum :
+       ($sel == 2'b01) ? $diff :
+       ($sel == 2'b10) ? $prod :
+                         $quot; 
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+
+**makerchip** [combinational_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0X6hXMz)
+**output**
+**image**
 
 
   
