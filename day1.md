@@ -99,17 +99,22 @@ return 0;
 ```
 - Run them as shown below
   **images**
-- now running on riscv simulator: **riscv64-unknown-elf-gcc -01 -mabi=lp64i -o sum1ton.o sum1ton.c**
+- now running on riscv simulator:
+           ```c riscv64-unknown-elf-gcc -01 -mabi=lp64i -o sum1ton.o sum1ton.c ```
 **images**
-- to view assembly code: **riscv64-elf-objdump -d sum1ton.o**
+- to view assembly code:
+        ```  riscv64-elf-objdump -d sum1ton.o ```
   **images**
 -  lets see main assembly code: In this each register adress varies by 4, no of instructions are 15 here.
 **images**
--  now again run on riscv simulator by modifying the command to **riscv64-unknown-elf-gcc -Ofast -mabi=lp64i -o sum1ton.o sum1ton.c** by using Ofast number of instructions reduced to 12.
+-  now again run on riscv simulator by modifying the command to ```c riscv64-unknown-elf-gcc -Ofast -mabi=lp64i -o sum1ton.o sum1ton.c ```
+-  by using Ofast number of instructions reduced to 12.
 **images**
-- the command to get the output through riscv compiker is **spike pk sum1ton.o**
+- the command to get the output through riscv compiker is
+         spike pk sum1ton.o
 **images**
-- lets debug each instruction : to do that type command **spike -d pk sum1ton.o**
+- lets debug each instruction : to do that type command
+        spike -d pk sum1ton.o
 we have debug each and every instruction in assembly code 
   - to read a2, type reg  0 a2
   - to run next instruction, jst press enter
