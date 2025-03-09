@@ -118,7 +118,16 @@ we have debug each and every instruction in assembly code
 ### Lab for signed and unsigned numbers
 
 here is my c code for highest unsigned number
-**images**
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+ long long int max = (long long int) (pow(2,10) * -1);
+printf("highest number represented by long long int is %lld\n",max);
+return 0;
+}
+```
 
 after runing in riscv compiler , we get output as follows 
 **images**
