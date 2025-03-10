@@ -18,7 +18,8 @@ An Instruction Set Architecture (ISA) is the interface between hardware and soft
 We see that apps run on our laptops,mobile phones etc. They are all hardware. How does this happen?So,there is an interaction between apps and hardware, i.e system software.
 #### SYSTEM SOFTWARE:
 System software converts high level programming language like c,c++,java or python to binary level language which is understand by the hardware.
-***images**
+![system_software](././images/System_software.png)
+
 
 The major components in system software are
 
@@ -37,7 +38,9 @@ we obtain a *exe files. The obtained *exe files are fed to the assembler.The job
 
 
 So, in general, The Instruction set Architecture is fed to the assembler through RISC-V assembly language. We write a RTL(Register Transfer level) snippet which understands instructions. Then we get  a netlist for given RTL. It is implemented to hardware.
-**images**
+
+![risc_flow](././images/RISC_flow.png)
+
 ### Understanding instructions:
 
 When you run a c program on your compiler, after compiling we get a set of instructions.
@@ -45,16 +48,22 @@ When you run a c program on your compiler, after compiling we get a set of instr
 ### Pseudo instructions:
 Instructions like mv,li,ret are said to be pseudo instructions.In RISC-V, pseudo-instructions are assembler-level instructions that do not exist as actual machine instructions but are instead translated into one or more real RISC-V instructions by the assembler. These pseudo-instructions improve code readability and simplify programming. 
 Examples: mv, li,ret
-**images**
+![pseudo_instructions](././images/pseudo_instructions.png)
+
+
 ### Base integer instructions:
 
 The Base Integer Instructions in RISC-V (RV32I and RV64I) include arithmetic, logical, shift, load/store, and control flow instructions. These instructions are essential for general-purpose computation and form the foundation of RISC-V assembly programming.  Examples : addi,sd,auipo,jalr.
-**images**
+
+![base_integer](././images/base_inetger_instructions.png)
+
 
 **Multiply extensions:**
 Multiply Extension (M Extension) in RISC-V adds hardware support for multiplication and division operations. It is an optional extension, meaning it is not included in the base integer instruction set (RV32I or RV64I) but is commonly supported in performance-critical applications.
 If the instructions does both integer and multiplication,then its nomeclature changes to **RV64MI.**
-**images*8
+
+![multiply_extension](././images/multiply_extension.png)
+
 
 ### Single and Double Precision Floating-Point Extensions in RISC-V (F & D Extensions)
 
@@ -64,21 +73,26 @@ The Floating-Point Extensions in RISC-V include:
 -  D Extension: Double-precision (64-bit floating-point)
   
 These extensions provide efficient computation for applications requiring high-precision math, such as scientific computing, graphics, AI, and machine learning. They are fmul,fdiv,fsd,flw 
-**images**
+![single_double](././images/single_and_double.png)
+
 
 ### Application binary interface
 The Application Binary Interface (ABI) in RISC-V defines conventions for function calling, register usage, memory layout, and system interaction to ensure compatibility between compiled programs and the operating system or runtime environment. It specifies how function arguments are passed (typically using registers like a0–a7 for the first few arguments and the stack for additional ones), how return values are handled (a0 and a1 for primary and secondary return values), and which registers must be preserved across function calls (callee-saved registers such as s0–s11). The ABI also defines stack alignment rules, floating-point register usage (if applicable), and calling conventions for different privilege levels. Different ABIs exist for RISC-V, such as ILP32 (for 32-bit systems) and LP64 (for 64-bit systems), with variations like ILP32F or LP64D to indicate floating-point support. These conventions  ensurethat software compiled by different tools or written in different languages can interoperate smoothly within the RISC-V ecosystem. 
-**images**
+
+![abi](././images/abi.png)
+
 
 ### Memory allocations and stack pointer:
 In RISC-V, memory allocation using the stack is managed by the stack pointer (sp) (x2), which tracks the top of the stack. The stack is used for storing function call information, local variables, and register states. It grows downward in memory, meaning each function call or local variable allocation decreases the value of sp, while deallocation (function return) increases it. To maintain proper execution and prevent corruption, the stack must be 16-byte aligned. During a function call, registers like the return address (ra) and callee-saved registers (s0–s11) may be pushed onto the stack, ensuring they are restored correctly before returning. Efficient stack management is essential for maintaining program stability and preventing stack overflow errors.
-**images**
+![memory_allocation](././images/memory_allocation_sp.png)
+
 
 ### 64-Bit number system for unsigned Numbers:
  A 64-bit number system for unsigned numbers, values are represented using 64 bits, meaning each number ranges from 0 to 2^{64} . Since unsigned numbers do not support negative values, all 64 bits are used to store positive values. 64  bit is divided into two 32 bits.entire 64 bit is called a double word. Each 32 bit is called a word.  
 
 Maximum Value (Decimal 2^64− 1 ) → Binary: 1111111111111111111111111111111111111111111111111111111111111111 
-**images**
+![byte](././images/byte.png)
+
 
 
 ### 64-Bit number system for signed Numbers:
@@ -98,28 +112,42 @@ return 0;
 }
 ```
 - Run them as shown below
-  **images**
+  ![sum1ton](././images/sum1ton.png)
+
+ 
 - now running on riscv simulator:
-           ```c riscv64-unknown-elf-gcc -01 -mabi=lp64i -o sum1ton.o sum1ton.c ```
-**images**
+```c
+  riscv64-unknown-elf-gcc -01 -mabi=lp64i -o sum1ton.o sum1ton.c
+  ```
+![riscvcode](././images/riscvcode.png)
+
 - to view assembly code:
-        ```  riscv64-elf-objdump -d sum1ton.o ```
-  **images**
+ ```o
+    riscv64-elf-objdump -d sum1ton.o
+  ```
+  ![assembly_code](././images/assembly_code.png)
 -  lets see main assembly code: In this each register adress varies by 4, no of instructions are 15 here.
-**images**
--  now again run on riscv simulator by modifying the command to ```c riscv64-unknown-elf-gcc -Ofast -mabi=lp64i -o sum1ton.o sum1ton.c ```
+![main_assembly_code](././images/main_assembly_code.png)
+
+-  now again run on riscv simulator by modifying the command to
+   ```c
+    riscv64-unknown-elf-gcc -Ofast -mabi=lp64i -o sum1ton.o sum1ton.c
+    ```
 -  by using Ofast number of instructions reduced to 12.
-**images**
+![ofast_assembly](././images/ofast_assembly.png)
+
 - the command to get the output through riscv compiker is
          spike pk sum1ton.o
-**images**
+![spike](././images/spike.png)
+
 - lets debug each instruction : to do that type command
         spike -d pk sum1ton.o
 we have debug each and every instruction in assembly code 
   - to read a2, type reg  0 a2
   - to run next instruction, jst press enter
   - addi, sp, sp -16 tells you to subtract 16 from previous stored sp address and it updates the value
-  **images**
+![spike2](././images/spike2.png)
+
 ### Lab for signed and unsigned numbers
 
 here is my c code for highest unsigned number
@@ -135,7 +163,8 @@ return 0;
 ```
 
 after runing in riscv compiler , we get output as follows 
-**images**
+![unsigned](././images/unsigned_highest2.png)
+
 ### c signed code 
 ```c
 #include <stdio.h>
@@ -149,7 +178,8 @@ return 0;
 }
 ```
 we get output as follows:
-**images**
+![signed](././images/signed.png)
+
 
 
 
