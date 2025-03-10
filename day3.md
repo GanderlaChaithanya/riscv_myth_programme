@@ -182,9 +182,257 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 
-**makerchip** [combinational_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0X6hXMz)
+**makerchip ide link :** [combinational_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0X6hXMz)
 **output**
 **image**
+
+### Sequential circuits implementation
+
+#### Counter 
+**code**
+```tlv
+m5_TLV_version 1d: tl-x.org
+\m5
+
+   
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   $reset = *reset;
+   
+   $num[31:0] = $reset ? 1: (>>1$num+1);
+   
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link** :[counter](https://www.makerchip.com/sandbox/0W6fjhnMo/0Q1hkNK)
+**image**
+
+#### fibonacci_series
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   m5_makerchip_module  
+\TLV
+   $reset = *reset; 
+   $num [31:0] = $reset ? 1:(>>1$num + >>2$num);
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link** :[fibonacci_series](https://www.makerchip.com/sandbox/0W6fjhnMo/0P1hK5m)
+**images**
+
+#### Sequential calaculator
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   
+   m5_makerchip_module  
+\TLV
+   $mul[3:0] = $val1[1:0] * $val2[1:0];
+   $div[3:0] = $val1[1:0] / $val2[1:0];
+   $sub[3:0] = $val1[1:0] - $val2[1:0];
+   $add[3:0] = $val1[1:0] + $val2[1:0];
+   $result[3:0] = $sel[0] ? $add : $sel[1] ? $sub : $sel[2] ? $mul : $div;
+   
+   $val2[1:0] = *reset ? 0 : >>1$result;
+   *passed = cyc_cnt > 30;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link** [fibonacci_series](https://www.makerchip.com/sandbox/0W6fjhnMo/0Rghvg1)
+**images**
+
+### Pipelining:
+
+Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multiple instructions simultaneously by dividing operations into stages. It uses the |> operator to define pipeline stages, ensuring automatic data flow between them. TL-Verilog simplifies register management, as pipeline registers are inferred automatically. Each stage processes part of the computation, with data moving forward in every clock cycle. This improves performance, reduces complexity, and enhances scalability. Additionally, TL-Verilog efficiently handles forwarding and pipeline hazards. Makerchip IDE provides a simulation and visualization environment, making debugging and optimization easier.
+
+
+#### Pythogaros therom pipeline
+**code**
+```tlv
+\m4_TLV_version 1d: tl-x.org
+\SV
+      `include "sqrt32.v";
+     m4_makerchip_module   
+\TLV
+   |calc
+      @1
+         $aa_sq[31:0] = $aa[3:0] * $aa;
+         $bb_sq[31:0] = $bb[3:0] * $bb;
+      @2
+         $cc_sq[31:0] = $aa_sq + $bb_sq;
+         
+      @3
+         $cc[31:0] = sqrt($cc_sq);   
+!  *passed = *cyc_cnt > 16'd30;
+\SV
+   endmodule
+```
+**makerchip ide link** [pyythogoraus](https://www.makerchip.com/sandbox/0W6fjhnMo/0JZhqQk)
+**images**
+#### Calaculator_counter_Pipeline
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV 
+   |calc
+      @0
+         
+         $N = 32'b0;
+         $sum[31:0] = $val1[31:0] + $val2[31:0];
+         $diff[31:0] = $val1[31:0] - $val2[31:0];
+         $prod[31:0] = $val1[31:0] * $val2[31:0];
+         $quot [31:0] = $val1[31:0] / $val2[31:0];
+          
+         $out[31:0] = $reset ? 0  :  // Reset overrides everything
+                      $op[0] ? $sum :
+                      $op[1] ? $diff :
+                      $op[2] ? $prod :
+                      $op[3] ? $quot : $N;
+         $cnt = ($reset) ? 0 : (>>1$cnt+1);
+         $val1[31:0] = >>1$out;
+   *passed = *cyc_cnt > 40;
+   
+\SV
+   endmodule
+
+```
+**maker chip ide link ** [combinational_calc_pipeline](https://www.makerchip.com/sandbox/0W6fjhnMo/0Z4h5oZ)
+**images**
+#### 2-cycle calaculator 
+**code**
+```tlv
+m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   |calc
+      @1
+         $reset = *reset;
+         $val1[31:0] = >>2$out[3:0];
+         $val2[31:0] = $rand2[3:0];
+         $op[1:0] = $rand3[1:0];
+         $sum[31:0] = $val1[31:0] + $val2[31:0];
+         $diff[31:0] = $val1[31:0] - $val2[31:0];
+         $prod[31:0] = $val1[31:0] * $val2[31:0];
+         $quot[31:0] = $val1[31:0] / $val2[31:0];        
+         $cnt = $reset == 1 ? 1'h0 : >>1$cnt +1;
+      @2
+         $valid = ($reset| !$cnt);
+         $out[31:0] = $valid ==1 ? 32'h0 :
+                                        $op[1:0] == 0 ? $sum:
+                                        $op[1:0] == 1 ? $diff:
+                                        $op[1:0] == 2? $prod :
+                                        $quot;
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link** [2-cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0Bgh7ln)
+**images**
+
+### Validity:
+In Makerchip IDE, validity in TL-Verilog plays a crucial role in managing transactions within pipeline stages efficiently. Instead of using explicit enable signals, TL-Verilog introduces the %valid signal to determine whether data in a pipeline stage is meaningful and should be processed. This approach automatically controls when operations occur, preventing unnecessary computations on invalid data. In Makerchip, when designing digital circuits, validity ensures that only active transactions propagate through the pipeline, simplifying control logic and eliminating manual enable signal management. As a result, designers can focus on functionality rather than low-level signal handling. By leveraging validity, Makerchip IDE allows for cleaner, optimized, and modular hardware designs, making pipeline implementation more intuitive and error-free. 
+
+
+
+### Clock gating:
+In TL-Verilog, clock gating is an implicit mechanism that optimizes power consumption by disabling the clock for pipeline stages when they do not contain valid data. Unlike traditional Verilog, where designers manually implement clock enable signals and gating logic, TL-Verilog automates this process using validity signals (%valid). In Makerchip IDE, when %valid is low, the corresponding pipeline stage remains idle, effectively preventing unnecessary toggling of registers and reducing dynamic power consumption. This automatic clock gating mechanism simplifies hardware design, making it more efficient for low-power applications. By eliminating the need for explicit clock control, TL-Verilog allows designers to focus on functionality while ensuring power-efficient execution, making it an ideal choice for modern digital circuit design.
+
+
+#### Calaculating total distance with validity:
+
+**code**
+```tlv
+\m4_TLV_version 1d: tl-x.org
+\SV
+    `include "sqrt32.v";
+     m4_makerchip_module
+\TLV
+   |calc
+      @1
+         $reset = *reset;
+      ?$valid
+         @1
+            $aa_sq[31:0] = $aa[3:0] * $aa;
+            $bb_sq[31:0] = $bb[3:0] * $bb;
+         @2
+            $cc_sq[31:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[31:0] = sqrt($cc_sq);
+      @4
+         $tot_dist[63:0] =
+              $reset ? '0 :
+              $valid ? >>1$tot_dist + $cc :
+                        >>1$tot_dist;
+         
+!  *passed = *cyc_cnt > 16'd30;
+   
+\SV
+endmodule
+```
+**makerchip ide link**  [distance_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0zmhMm0)
+**images**
+
+#### 2- Cycle_calaculator _validity
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+  m5_makerchip_module   
+\TLV
+   |calc
+      @1
+         $valid = $reset ? '0 : >>1$valid + 1;
+         $valid_reset = $valid || $reset; 
+         ?$valid
+            $val1[31:0] = >>2$out[3:0];
+            $val2[31:0] = $rand2[3:0];
+            $op[1:0] = $rand3[1:0];
+            $sum[31:0] = $val1 + $val2;
+            $diff[31:0] = $val1 - $val2;
+            $prod[31:0] = $val1 * $val2;
+            $quot[31:0] = $val1 / $val2;
+
+      @2
+         $out[31:0] = $valid_reset == 1 ? 
+                                        $op[1:0] == 0 ? $sum:
+                                        $op[1:0] == 1 ? $diff:
+                                        $op[1:0] == 2? $prod :
+                                        $quot : >>1$out;
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link** [cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0y8hryg)
+
+               
+
+
+
+
+
 
 
   
