@@ -71,6 +71,9 @@ Key Features of TL-Verilog:
 ```
 **markchip ide link** [mux2:1]( https://www.makerchip.com/sandbox/0W6fjhnMo/0Nxh0Mm)
 
+**output**
+![mux2:1](././images/multiplexer.png)
+
 
 
 #### 2. Multiplexer with vectors
@@ -91,7 +94,9 @@ Key Features of TL-Verilog:
    endmodule
 ```
 **makerchip ide link:** [mux_with_vectors](https://www.makerchip.com/sandbox/0W6fjhnMo/0r0h8DL)
-**image**
+
+**output**
+![mux_with_vectors](././images/mux_with_vectors.png)
 
 #### Multiplexer 4:1
 **code**
@@ -109,8 +114,9 @@ Key Features of TL-Verilog:
    endmodule
 ```
 **makerchip link:** [mux4:1](https://www.makerchip.com/sandbox/0W6fjhnMo/0wjhGR8)
+
 **output**
-**image**
+![mux4](././images/mux4.png)
 
 #### vectors
 **code**
@@ -128,8 +134,9 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 **makerchip link** [vectors](https://www.makerchip.com/sandbox/0W6fjhnMo/0Wnh5y3)
+
 **output**
-**image**
+![vectors](././images/vectors_lab.png)
 
 ####  pythogoras theorm
 
@@ -151,8 +158,9 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 **makerchip** [pythogoras therom](https://www.makerchip.com/sandbox/0W6fjhnMo/0Y6hL6x)
+
 **output**
-**image**
+![pythogoras_thorm](././images/pythogoras_theorm.png)
 
 #### Combinational calaculator
 **code**
@@ -183,8 +191,9 @@ m5_TLV_version 1d: tl-x.org
 ```
 
 **makerchip ide link :** [combinational_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0X6hXMz)
+
 **output**
-**image**
+![riscv](././images/combinational_calc.png)
 
 ### Sequential circuits implementation
 
@@ -212,7 +221,9 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 **makerchip ide link** :[counter](https://www.makerchip.com/sandbox/0W6fjhnMo/0Q1hkNK)
-**image**
+
+**output**
+![riscv](././images/counter.png)
 
 #### fibonacci_series
 **code**
@@ -230,7 +241,10 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 **makerchip ide link** :[fibonacci_series](https://www.makerchip.com/sandbox/0W6fjhnMo/0P1hK5m)
-**images**
+
+**output**
+
+![fibonacci_series](././images/fibonacci_series.png)
 
 #### Sequential calaculator
 **code**
@@ -253,8 +267,10 @@ m5_TLV_version 1d: tl-x.org
 \SV
    endmodule
 ```
-**makerchip ide link** [fibonacci_series](https://www.makerchip.com/sandbox/0W6fjhnMo/0Rghvg1)
-**images**
+**makerchip ide link** [sequntial_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0Rghvg1)
+
+**output**
+![seq](././images/seq.png)
 
 ### Pipelining:
 
@@ -283,7 +299,42 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
    endmodule
 ```
 **makerchip ide link** [pyythogoraus](https://www.makerchip.com/sandbox/0W6fjhnMo/0JZhqQk)
-**images**
+
+**output**
+![pipelining](././images/pipelining.png)
+
+#### Error pipelining
+**code**
+```tlv
+\m5_TLV_version 1d: tl-x.org
+\m5
+\SV
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   
+   |comp
+      @1
+         $err1 = $bad_input | $illegal_op;
+      @2 
+         $err1
+      @3
+         $err2 =$overflow | $err1;
+      @4 
+         $err2
+      @5
+         $err2
+      @6
+         $err3 = $err2 | $div_by_zero;.
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+**makerchip ide link** [error_pipelining](https://www.makerchip.com/sandbox/0XDfnhkY4/0pghnAg)
+
+**output**
+![pipelining_lab](././images/pipelinig_lab.png)
+
 #### Calaculator_counter_Pipeline
 **code**
 ```tlv
@@ -314,8 +365,11 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
    endmodule
 
 ```
-**maker chip ide link ** [combinational_calc_pipeline](https://www.makerchip.com/sandbox/0W6fjhnMo/0Z4h5oZ)
-**images**
+**maker chip ide link** [combinational_calc_pipeline](https://www.makerchip.com/sandbox/0W6fjhnMo/0Z4h5oZ)
+
+**output**
+![calc_counter](././images/calc_counter.png)
+
 #### 2-cycle calaculator 
 **code**
 ```tlv
@@ -348,7 +402,10 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 **makerchip ide link** [2-cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0Bgh7ln)
-**images**
+
+**output**
+
+![cycle_calculator](././images/cycle_calculator.png)
 
 ### Validity:
 In Makerchip IDE, validity in TL-Verilog plays a crucial role in managing transactions within pipeline stages efficiently. Instead of using explicit enable signals, TL-Verilog introduces the %valid signal to determine whether data in a pipeline stage is meaningful and should be processed. This approach automatically controls when operations occur, preventing unnecessary computations on invalid data. In Makerchip, when designing digital circuits, validity ensures that only active transactions propagate through the pipeline, simplifying control logic and eliminating manual enable signal management. As a result, designers can focus on functionality rather than low-level signal handling. By leveraging validity, Makerchip IDE allows for cleaner, optimized, and modular hardware designs, making pipeline implementation more intuitive and error-free. 
@@ -391,7 +448,9 @@ In TL-Verilog, clock gating is an implicit mechanism that optimizes power consum
 endmodule
 ```
 **makerchip ide link**  [distance_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0zmhMm0)
-**images**
+
+**output**
+![distance_validity](././images/distance_validty.png)
 
 #### 2- Cycle_calaculator _validity
 **code**
@@ -426,6 +485,10 @@ endmodule
    endmodule
 ```
 **makerchip ide link** [cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0y8hryg)
+
+**output**
+![cycle_calc_validity](././images/cycle_calc_validity.png)
+
 
                
 
