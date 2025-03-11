@@ -71,7 +71,7 @@ Key Features of TL-Verilog:
 ```
 **markchip ide link** [mux2:1]( https://www.makerchip.com/sandbox/0W6fjhnMo/0Nxh0Mm)
 
-**image**
+
 
 #### 2. Multiplexer with vectors
 
