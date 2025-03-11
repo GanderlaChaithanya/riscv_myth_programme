@@ -83,7 +83,7 @@ rs2 → Second source register (contains second operand).
 ### 4. Instruction Encoding (R-Type Format):
 
 The ADD instruction follows the R-type format in RISC-V, which consists of the following fields:
-![add](././images/add.png)
+![add](././images/add.jpg)
 - Opcode (0110011) → Indicates R-type integer operations. 
 - funct3 (000) → Specifies ADD operation. 
 - funct7 (0000000) → Differentiates ADD from SUB (which uses 0100000).
@@ -100,7 +100,7 @@ Opcode (7-bit)
 rs2 (5-bit)
 rs1 (5-bit)
 funct3 (3-bit)
-![sd](././images/sd.png)
+![sd](././images/sd.jpg)
 -  Opcode (0100011) → Indicates a store instruction. 
 - funct3 (011) → Specifies storing a double word (64-bit). 
 -  Immediate (imm[11:0]) → Signed 12-bit offset for memory address calculation.
