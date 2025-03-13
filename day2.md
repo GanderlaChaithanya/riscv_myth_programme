@@ -92,7 +92,7 @@ rs2 → Second source register (contains second operand).
 
 The ADD instruction follows the R-type format in RISC-V, which consists of the following fields:
 
-| ![load](././images/add.png) |
+| ![load](././images/add.jpg) |
 | :--------------------------------------------------: |
 |    Instruction Encoding      |
 
@@ -112,7 +112,12 @@ Opcode (7-bit)
 rs2 (5-bit)
 rs1 (5-bit)
 funct3 (3-bit)
-![sd](././images/sd.jpg)
+
+| ![sd](././images/sd.jpg) |
+| :--------------------------------------------------: |
+|  S type format     |
+
+
 -  Opcode (0100011) → Indicates a store instruction. 
 - funct3 (011) → Specifies storing a double word (64-bit). 
 -  Immediate (imm[11:0]) → Signed 12-bit offset for memory address calculation.
@@ -124,7 +129,12 @@ From all above instructions,in registers it uses ony 5 bits, so number if regist
 
 ### labs:
 - writing assembly code for sum1ton.c
-  ![asm](././images/asm.png)
+  
+| ![asm](././images/asm.png) |
+| :--------------------------------------------------: |
+
+
+
 after writing c code and load.s as follows for above asm
 ```c
 #include <stdio.h>
@@ -152,9 +162,13 @@ loop:     add a4, a3, a4
           add a0, a4, zero
           ret
 ```
-![sum_using_asm](././images/sum_using_asm.png)
+| ![sum_using_asm](././images/sum_using_asm.png) |
+| :--------------------------------------------------: |
+
 now lets run the same on riscv cpu- picorv32 
 
-![riscv](././images/sum_run_on_cpu.png)
+| ![sum_using_asm](././images/sum_run_on_cpu.png) |
+| :--------------------------------------------------: |
+
 
 
