@@ -1,8 +1,10 @@
 ## APPLICATION BINARY INTERFACE
 
 An Application Binary Interface (ABI) serves as a bridge between software and the underlying hardware or operating system. It defines rules for how programs interact at the binary level, including function calling conventions, register usage, memory layout, and system call mechanisms. By standardizing these interactions, an ABI ensures that compiled programs can run consistently across different environments without modification, enabling compatibility between software components, libraries, and system hardware. 
+| ![ABI](././images/ABI_INTERFACE.png) |
+| :--------------------------------------------------: |
+|          INTERFACE     |
 
-![ABI](././images/ABI_INTERFACE.png)
 ### Application Programming Interface (API):
 
 An API defines a set of rules and functions that software applications use to communicate with other software or hardware. It provides a structured way for programs to request services such as file operations, network communication, or accessing system resources. APIs abstract complex system details, making development easier by providing predefined functions rather than requiring direct hardware interaction.
@@ -39,12 +41,18 @@ Memory addressing determines how multi-byte data is stored in memory. There are 
  
 - The Most Significant Byte (MSB) is stored at the lowest memory address first. 
 - Example (storing 0x1122334455667788 at address 0x1000)
-- 
-![memory](././images/memory_loading.png)
+
+| ![memory_loading](././images/memory_loading.png) |
+| :--------------------------------------------------: |
+|        memory_loading   |
 ### Instruction Encoding in RISC-V Memory Operations :
 
 **LD:**The LD (Load Double Word) instruction is used in 64-bit RISC-V (RV64) to load a 64-bit (8-byte) value from memory into a 64-bit register. 
-![riscv](././images/load.png)
+
+
+| ![load](././images/load.png) |
+| :--------------------------------------------------: |
+|       Load   |
 
 **1. Opcode in Memory Instructions**
 
@@ -83,7 +91,11 @@ rs2 → Second source register (contains second operand).
 ### 4. Instruction Encoding (R-Type Format):
 
 The ADD instruction follows the R-type format in RISC-V, which consists of the following fields:
-![add](././images/add.jpg)
+
+| ![load](././images/add.png) |
+| :--------------------------------------------------: |
+|    Instruction Encoding      |
+
 - Opcode (0110011) → Indicates R-type integer operations. 
 - funct3 (000) → Specifies ADD operation. 
 - funct7 (0000000) → Differentiates ADD from SUB (which uses 0100000).
