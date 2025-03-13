@@ -95,4 +95,12 @@ SW x10, 8(x5)   # Store 32-bit data from register x10 to memory address (x5 + 8)
 **Forwarding (Bypassing):** In some cases, forwarding techniques can be used to avoid stalls.
 **Memory Dependencies:** Loads and stores must be correctly ordered to avoid data inconsistency.
 
+Here's the **Makerchip IDE Link** for **Single cycle cpu:** [singlecyclecpu](https://www.makerchip.com/sandbox/0xkfJhwp9/0P1hKo4)
+
+TL Verilog code for **Pipeline cpu:**   [pipeline_cpu](pipeline_cpu.tlv)
+
+
+output image : [pipeline_cpu](./images/pipeline_cpu.png)
+
+output waveform : [pipeline_cpu](./images/output_waveform_pipeline_cpu.jpg)
 
