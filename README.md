@@ -1,4 +1,4 @@
-# RISC-V MYTH_programe
+# RISC-V MYTH_program
 The **RISC-V MYTH**  program by  is a structured, hands-on course designed to teach students and engineers the fundamentals of RISC-V processor design using **TL-Verilog**. It covers the **RISC-V instruction set architecture (ISA), microarchitecture,** and the step-by-step process of building a **5-stage pipelined RISC-V CPU**. The program utilizes **Makerchip IDE**, an open-source platform for TL-Verilog coding and simulation, allowing participants to design, verify, and simulate their processors in a cloud-based environment. Throughout the course, we can explore key concepts such as hazards, forwarding, bypassing, and pipeline design techniques, ensuring a strong grasp of modern processor design principles.
 ## Course Outline
 ### Day 1: [Introduction to RISC-V ISA and GNU Compiler Toolchain](day1.md)
