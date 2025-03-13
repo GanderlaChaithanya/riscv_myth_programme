@@ -139,13 +139,13 @@ m5_TLV_version 1d: tl-x.org
 \SV
    endmodule
 ```
-**makerchip link** [vectors](https://www.makerchip.com/sandbox/0W6fjhnMo/0Wnh5y3)
+**Makerchip  IDE link:** [vectors](https://www.makerchip.com/sandbox/0W6fjhnMo/0Wnh5y3)
 
 **output**
 
 ![vectors](././images/vectors_lab.png)
 <br>
-### pythogoras theorm
+### Pythogoras theorm
 
 **code**
 ```tlv
@@ -200,7 +200,7 @@ m5_TLV_version 1d: tl-x.org
    endmodule
 ```
 
-**makerchip ide link :** [combinational_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0X6hXMz)
+**Makerchip IDE link :** [combinational_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0X6hXMz)
 
 **output**
 
@@ -232,7 +232,7 @@ m5_TLV_version 1d: tl-x.org
 \SV
    endmodule
 ```
-**Makerchip ide link** :[counter](https://www.makerchip.com/sandbox/0W6fjhnMo/0Q1hkNK)
+**Makerchip IDE link:** :[counter](https://www.makerchip.com/sandbox/0W6fjhnMo/0Q1hkNK)
 
 **output**
 
@@ -254,7 +254,7 @@ m5_TLV_version 1d: tl-x.org
 \SV
    endmodule
 ```
-**Makerchip ide link** :[fibonacci_series](https://www.makerchip.com/sandbox/0W6fjhnMo/0P1hK5m)
+**Makerchip IDE link** :[fibonacci_series](https://www.makerchip.com/sandbox/0W6fjhnMo/0P1hK5m)
 
 **output**
 
@@ -282,7 +282,7 @@ m5_TLV_version 1d: tl-x.org
 \SV
    endmodule
 ```
-**Makerchip ide link** [sequntial_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0Rghvg1)
+**Makerchip IDE link:** [sequntial_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0Rghvg1)
 
 **output**
 ![seq](././images/seq.png)
@@ -314,7 +314,7 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
 \SV
    endmodule
 ```
-**Makerchip ide link** [pyythogoraus](https://www.makerchip.com/sandbox/0W6fjhnMo/0JZhqQk)
+**Makerchip IDE link:** [pythogoraus_THOERM](https://www.makerchip.com/sandbox/0W6fjhnMo/0JZhqQk)
 
 **output**
 ![pipelining](././images/pipelining.png)
@@ -347,7 +347,7 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
 \SV
    endmodule
 ```
-**Makerchip ide link** [error_pipelining](https://www.makerchip.com/sandbox/0XDfnhkY4/0pghnAg)
+**Makerchip IDE link:** [error_pipelining](https://www.makerchip.com/sandbox/0XDfnhkY4/0pghnAg)
 
 **output**
 
@@ -384,7 +384,7 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
    endmodule
 
 ```
-**Makerchip ide link** [combinational_calc_pipeline](https://www.makerchip.com/sandbox/0W6fjhnMo/0Z4h5oZ)
+**Makerchip IDE link:** [combinational_calc_pipeline](https://www.makerchip.com/sandbox/0W6fjhnMo/0Z4h5oZ)
 
 **output**
 
@@ -422,7 +422,7 @@ m5_TLV_version 1d: tl-x.org
 \SV
    endmodule
 ```
-**Makerchip ide link** [2-cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0Bgh7ln)
+**Makerchip IDE link:** [2-cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0Bgh7ln)
 
 **output**
 
@@ -468,7 +468,7 @@ In TL-Verilog, clock gating is an implicit mechanism that optimizes power consum
 \SV
 endmodule
 ```
-**makerchip ide link**  [distance_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0zmhMm0)
+**Makerchip IDE link:**  [distance_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0zmhMm0)
 
 **output**
 
@@ -507,7 +507,7 @@ endmodule
 \SV
    endmodule
 ```
-**Makerchip ide link** [cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0y8hryg)
+**Makerchip IDE link:** [cycle_calaculator](https://www.makerchip.com/sandbox/0W6fjhnMo/0y8hryg)
 
 **output**
 
