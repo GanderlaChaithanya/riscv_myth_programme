@@ -86,4 +86,4 @@ TL Verilog code for **Single cycle cpu:**   [Single_cycle_cpu](Singlecycle_riscv
 
 output image : [Single_cycle_cpu](./images/single_cycle_riscv_cpu.png)
 
-
+output waveform : [Single_cycle_cpu](./images/output_waveform_single_cycle_cpu.jpg)
