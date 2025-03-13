@@ -7,3 +7,11 @@ The **RISC-V MYTH**  program by  is a structured, hands-on course designed to te
 ### Day 4: [Basic RISC-V CPU Microarchitecture](day4.md)
 ### Day 5: [Complete Pipelined RISC-V Microarchitecture](day5.md)
 
+## Acknowledgements
+I would like to express my sincere gratitude to **VSD (VLSI System Design)** and **RISC-V International** for organizing the **RISC-V MYTH program**. Special thanks to **Kunal Ghosh** and the VSD team for their exceptional guidance and for providing valuable learning resources on **RISC-V ISA** and microarchitecture.
+
+
+Additionally, I appreciate the open-source tools and platforms, such as **Makerchip IDE** and **TL-Verilog**, which enabled hands-on experience in designing a **RISC-V core**.
+
+
+This repository is a reflection of my learning journey through the RISC-V MYTH program, and I acknowledge all contributors and communities that have supported open-source VLSI and RISC-V education
