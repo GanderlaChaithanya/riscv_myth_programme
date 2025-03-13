@@ -100,7 +100,7 @@ Here's the **Makerchip IDE Link** for **Single cycle cpu:** [singlecyclecpu](htt
 TL Verilog code for **Pipeline cpu:**   [pipeline_cpu](pipeline_cpu.tlv)
 
 
-output image : [pipeline_cpu](./images/pipeline_cpu.png)
+output image : [pipeline_cpu](./images/pipeline_cpu.jpg)
 
 output waveform : [pipeline_cpu](./images/output_waveform_pipeline_cpu.jpg)
 
