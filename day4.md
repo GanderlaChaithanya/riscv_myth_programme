@@ -81,6 +81,9 @@ This block diagram represents a single-cycle RISC-V processor architecture, wher
 
 Here's the **Makerchip IDE Link** for **Single cycle cpu:** [singlecyclecpu](https://www.makerchip.com/sandbox/0xkfJhwp9/0P1hKo4)
 
-TL Verilog code for **Single cycle cpu:**   [Single_cycle_cpu](code.md)
+TL Verilog code for **Single cycle cpu:**   [Single_cycle_cpu](Singlecycle_riscv_cpu.tlv)
+
+
+output image : [Single_cycle_cpu](./images/single_cycle_riscv_cpu.png)
 
 
