@@ -150,7 +150,9 @@ return 0;
 ```c
   riscv64-unknown-elf-gcc -01 -mabi=lp64i -o sum1ton.o sum1ton.c
   ```
-![riscvcode](././images/riscvcode.png)
+
+| ![riscvcode](./images/riscvcode.png) |
+| :--------------------------------------------------: |
 
 - to view assembly code:
  ```o
@@ -160,6 +162,7 @@ return 0;
 | ![assembly_code](./images/assembly_code.png) |
 | :--------------------------------------------------: |
 -  lets see main assembly code: In this each register adress varies by 4, no of instructions are 15 here.
+  
 | ![main_assembly_code](./images/main_assembly_code.png) |
 | :--------------------------------------------------: |
 
@@ -173,6 +176,7 @@ return 0;
 | :--------------------------------------------: |
 - the command to get the output through riscv compiker is
          spike pk sum1ton.o
+  
 | ![spike](./images/spike.png) |
 | :--------------------------: |
 
@@ -182,6 +186,7 @@ we have debug each and every instruction in assembly code
   - to read a2, type reg  0 a2
   - to run next instruction, jst press enter
   - addi, sp, sp -16 tells you to subtract 16 from previous stored sp address and it updates the value
+    
 | ![spike](./images/spike2.png) |
 | :---------------------------: |
 
