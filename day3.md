@@ -73,8 +73,11 @@ Key Features of TL-Verilog:
 
 **output**
 
+| ![mux2:1](././images/multiplexer.png) |
+| :--------------------------------------------------: |
+|         multiplexer    |
 
-![mux2:1](././images/multiplexer.png)
+
 
 <br>
 
@@ -99,7 +102,11 @@ Key Features of TL-Verilog:
 
 **output**
 
-![mux_with_vectors](././images/mux_with_vectors.png)
+| ![mux_with_vectors](././images/mux_with_vectors.png) |
+| :--------------------------------------------------: |
+|         mux_with_vectors   |
+
+
 
 #### Multiplexer 4:1
 **code**
@@ -120,7 +127,11 @@ Key Features of TL-Verilog:
 
 **output**
 
-![mux4](././images/mux4.png)
+| ![mux4](././images/mux4.png) |
+| :--------------------------------------------------: |
+|         MUX 4:1  |
+
+
 
 <br>
 
@@ -143,7 +154,12 @@ m5_TLV_version 1d: tl-x.org
 
 **output**
 
-![vectors](././images/vectors_lab.png)
+| ![Vectors](././images/vectors_lab.png) |
+| :--------------------------------------------------: |
+|         Vectors  |
+
+
+
 <br>
 ### Pythogoras theorm
 
@@ -168,7 +184,12 @@ m5_TLV_version 1d: tl-x.org
 
 **Output**
 
-![pythogoras_thorm](././images/pythogoras_theorm.png)
+
+| ![pythogoras](././images/pythogoras_theorm.png) |
+| :--------------------------------------------------: |
+|  pythogoras_theorm      |
+
+
 <br>
 
 ### Combinational calaculator
@@ -204,7 +225,11 @@ m5_TLV_version 1d: tl-x.org
 
 **output**
 
-![riscv](././images/combinational_calc.png)
+| ![combinational_calc](././images/combinational_calc.png) |
+| :--------------------------------------------------: |
+|  combinational_calc |
+
+
 <br>
 
 ### Sequential circuits implementation
@@ -236,7 +261,11 @@ m5_TLV_version 1d: tl-x.org
 
 **output**
 
-![riscv](././images/counter.png)
+| ![counter](././images/counter.png) |
+| :--------------------------------------------------: |
+|  counter |
+
+
 <br>
 
 ### Fibonacci_series
@@ -258,7 +287,11 @@ m5_TLV_version 1d: tl-x.org
 
 **output**
 
-![fibonacci_series](././images/fibonacci_series.png)
+| ![fibonacci_series](././images/fibonacci_series.png) |
+| :--------------------------------------------------: |
+| fibonacci_series  |
+
+
 <br>
 
 ### Sequential calaculator
@@ -285,7 +318,12 @@ m5_TLV_version 1d: tl-x.org
 **Makerchip IDE link:** [sequntial_calc](https://www.makerchip.com/sandbox/0W6fjhnMo/0Rghvg1)
 
 **output**
-![seq](././images/seq.png)
+
+| ![seq](././images/seq.png) |
+| :--------------------------------------------------: |
+| sequential calaculator  |
+
+
 <br>
 
 ### Pipelining:
@@ -317,7 +355,12 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
 **Makerchip IDE link:** [pythogoraus_THOERM](https://www.makerchip.com/sandbox/0W6fjhnMo/0JZhqQk)
 
 **output**
-![pipelining](././images/pipelining.png)
+
+| ![pipelining](././images/pipelining.png) |
+| :--------------------------------------------------: |
+| pipelining  |
+
+
 <br>
 
 #### Error pipelining
@@ -351,7 +394,11 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
 
 **output**
 
-![pipelining_lab](././images/pipelinig_lab.png)
+| ![pipelining_lab](././images/pipelinig_lab.png) |
+| :--------------------------------------------------: |
+|  error pipelining  |
+
+
 <br>
 
 ### Calaculator_counter_Pipeline
@@ -388,7 +435,11 @@ Pipelining in Makerchip IDE using TL-Verilog allows efficient execution of multi
 
 **output**
 
-![calc_counter](././images/calc_counter.png)
+| ![calc_counter](././images/calc_counter.png) |
+| :--------------------------------------------------: |
+|  Calaculator_counter_Pipeline  |
+
+
 <br>
 
 ### 2-cycle calaculator 
@@ -426,7 +477,11 @@ m5_TLV_version 1d: tl-x.org
 
 **output**
 
-![cycle_calculator](././images/cycle_calculator.png)
+| ![cycle_calculator](././images/cycle_calculator.png) |
+| :--------------------------------------------------: |
+|  cycle_calculator |
+
+
 <br>
 ### Validity:
 In Makerchip IDE, validity in TL-Verilog plays a crucial role in managing transactions within pipeline stages efficiently. Instead of using explicit enable signals, TL-Verilog introduces the %valid signal to determine whether data in a pipeline stage is meaningful and should be processed. This approach automatically controls when operations occur, preventing unnecessary computations on invalid data. In Makerchip, when designing digital circuits, validity ensures that only active transactions propagate through the pipeline, simplifying control logic and eliminating manual enable signal management. As a result, designers can focus on functionality rather than low-level signal handling. By leveraging validity, Makerchip IDE allows for cleaner, optimized, and modular hardware designs, making pipeline implementation more intuitive and error-free. 
@@ -472,7 +527,11 @@ endmodule
 
 **output**
 
-![distance_validity](././images/distance_validty.png)
+| ![distance_validity](././images/distance_validty.png) |
+| :--------------------------------------------------: |
+|  distance_validity |
+
+
 <br>
 
 ### 2- Cycle_calaculator _validity
@@ -511,10 +570,11 @@ endmodule
 
 **output**
 
-![cycle_calc_validity](././images/cycle_calc_validity.png)
+| ![2- Cycle_calaculator _validity](././images/cycle_calc_validity.png) |
+| :--------------------------------------------------: |
+|  2- Cycle_calaculator _validity |
 
 
-               
 
 
 
