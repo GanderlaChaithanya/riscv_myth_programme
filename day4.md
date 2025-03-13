@@ -79,3 +79,6 @@ This block diagram represents a single-cycle RISC-V processor architecture, wher
 - Branching ensures control flow changes such as loops and conditional execution.
 
 
+Here's the **Makerchip IDE Link** for **Single cycle cpu:** [singlecyclecpu](https://www.makerchip.com/sandbox/0xkfJhwp9/0P1hKo4)
+TL Verilog code for **Single cycle cpu:**  
+
