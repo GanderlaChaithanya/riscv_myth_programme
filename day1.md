@@ -1,7 +1,10 @@
 
 ### RISC-V:
 RISC-V is an open-source Reduced Instruction Set Computing (RISC) architecture designed for flexibility, scalability, and efficiency in modern computing. Unlike proprietary ISAs, RISC-V is freely available, enabling innovation in hardware development without licensing restrictions. It features a modular design, allowing implementations to be tailored for applications ranging from embedded systems to high-performance computing. The architecture supports 32-bit, 64-bit, and 128-bit variants, along with optional extensions for floating-point, vector processing, and atomic operations. With growing industry adoption, RISC-V is becoming a key player in microprocessor, SoC, and FPGA development, driving the future of open-source hardware.
-![riscv](././images/RISC-V.png)
+| ![RISCV](./images/RISC-V.png) |
+| :--------------------------------------------------: |
+|           RISC-V      |
+
 
 ### INSTRUCTION SET ARCHITECTURE:
 An Instruction Set Architecture (ISA) is the interface between hardware and software in a computer system. It defines the set of instructions that a processor can execute and acts as a blueprint for how software communicates with the hardware. 
@@ -18,7 +21,10 @@ An Instruction Set Architecture (ISA) is the interface between hardware and soft
 We see that apps run on our laptops,mobile phones etc. They are all hardware. How does this happen?So,there is an interaction between apps and hardware, i.e system software.
 #### SYSTEM SOFTWARE:
 System software converts high level programming language like c,c++,java or python to binary level language which is understand by the hardware.
-![system_software](././images/System_software.png)
+| ![system_software](./images/System_software.png) |
+| :--------------------------------------------------: |
+|           System software      |
+
 
 
 The major components in system software are
