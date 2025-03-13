@@ -88,15 +88,15 @@ In RISC-V, memory allocation using the stack is managed by the stack pointer (sp
 
 
 ### 64-Bit number system for unsigned Numbers:
- A 64-bit number system for unsigned numbers, values are represented using 64 bits, meaning each number ranges from 0 to 2^{64} . Since unsigned numbers do not support negative values, all 64 bits are used to store positive values. 64  bit is divided into two 32 bits.entire 64 bit is called a double word. Each 32 bit is called a word.  
+ A 64-bit number system for unsigned numbers, values are represented using 64 bits, meaning each number ranges from 0 to 2<sup>64</sup> . Since unsigned numbers do not support negative values, all 64 bits are used to store positive values. 64  bit is divided into two 32 bits.entire 64 bit is called a double word. Each 32 bit is called a word.  
 
-Maximum Value (Decimal 2^64− 1 ) → Binary: 1111111111111111111111111111111111111111111111111111111111111111 
+Maximum Value (Decimal 2<sup>64</sup>− 1 ) → Binary: 1111111111111111111111111111111111111111111111111111111111111111 
 ![byte](././images/byte.png)
 
 
 
 ### 64-Bit number system for signed Numbers:
-In a 64-bit number system for signed numbers, values are represented using two’s complement notation, where the most significant bit (MSB) serves as the sign bit. If the MSB is 0, the number is positive, while an MSB of 1 indicates a negative number. This system allows for a range from -9,223,372,036,854,775,808 (-2^{63}) to 9,223,372,036,854,775,807 (2^{63} −1). Positive numbers are stored in standard binary form, while negative numbers are represented by inverting all bits and adding 1. This approach simplifies arithmetic operations and ensures efficient hardware implementation. The two’s complement system also eliminates the need for separate representations of positive and negative zero, making calculations more streamlined. Signed 64-bit numbers are widely used in applications requiring both positive and negative values, such as timestamps, addressing schemes, and large-scale computations. 
+In a 64-bit number system for signed numbers, values are represented using two’s complement notation, where the most significant bit (MSB) serves as the sign bit. If the MSB is 0, the number is positive, while an MSB of 1 indicates a negative number. This system allows for a range from -9,223,372,036,854,775,808 2<sup>63</sup> to 9,223,372,036,854,775,807 (2<sup>63</sup> −1). Positive numbers are stored in standard binary form, while negative numbers are represented by inverting all bits and adding 1. This approach simplifies arithmetic operations and ensures efficient hardware implementation. The two’s complement system also eliminates the need for separate representations of positive and negative zero, making calculations more streamlined. Signed 64-bit numbers are widely used in applications requiring both positive and negative values, such as timestamps, addressing schemes, and large-scale computations. 
 
 ## LABS
 Let’s write c code for sum 1 to n natural numbers. 
