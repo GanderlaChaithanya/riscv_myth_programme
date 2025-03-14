@@ -6,7 +6,11 @@ Pipelining allows multiple instructions to be processed simultaneously, divided 
 - Memory Access (MEM) – Load/store operations.
 - Write-Back (WB) – Write results back to registers.
 
-  **images**
+| ![RISCV](./images/pipeline_riscv_cpu.png) |
+| :--------------------------------------------------: |
+|         Architecture of Pipelined RISCV CPU      |
+
+ 
 ### Pipeline Performance
 Ideally, an N-stage pipeline achieves an N times speedup, but hazards reduce efficiency.
 Techniques like hazard detection units, branch prediction, and forwarding optimize pipelining
